@@ -10,6 +10,13 @@ RDFS = Namespace(RDFS_PFX)
 OWL = Namespace(OWL_PFX)
 SH = Namespace(SH_PFX)
 
+# V-SHACL vocabulary
+MM_PFX = "https://example.org/vshacl#"  #store shared beginning as a python string
+MM = Namespace(MM_PFX)  #helper for constructing identifiers
+
+MM_depicts = MM.depicts  #name parameters used in shapes
+MM_DepictsConstraintComponent = MM.DepictsConstraintComponent   #Name the component identified in your reports
+
 XSD_WHOLE_INTEGERS = (
     XSD.integer,
     XSD.int,
