@@ -4,6 +4,8 @@ from pyshacl.consts import MM, SH
 
 EX = Namespace("https://example.org/")
 
+#setting up one small example, runs validation and checks results.
+
 
 def test_depicts_stub_reports_one_image():
     data = Graph().parse(
@@ -30,7 +32,8 @@ def test_depicts_stub_reports_one_image():
             sh:path ex:image ;
             sh:minCount 1 ;
             sh:nodeKind sh:IRI ;
-            mm:depicts "a photo of a bridge" .
+            mm:depicts "a photo of a bridge" ;
+            mm:threshold 0.5 .
         """,
         format="turtle",
     )
@@ -57,3 +60,5 @@ def test_depicts_stub_reports_one_image():
     assert report.value(result, SH.sourceShape) == EX.BridgeImageShape
     assert report.value(result, SH.resultSeverity) == SH.Violation
     assert report.value(result, SH.resultMessage) is not None
+    assert float(report.value(result, MM.score)) == 0.0
+    assert float(report.value(result, MM.threshold)) == 0.5    #report.value() retrieves the RDF literal. float() converts its numeric value for comparison.

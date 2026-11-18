@@ -14,6 +14,9 @@ SH = Namespace(SH_PFX)
 MM_PFX = "https://example.org/vshacl#"  #store shared beginning as a python string
 MM = Namespace(MM_PFX)  #helper for constructing identifiers
 
+MM_threshold = MM.threshold
+MM_score = MM.score
+
 MM_depicts = MM.depicts  #name parameters used in shapes
 MM_DepictsConstraintComponent = MM.DepictsConstraintComponent   #Name the component identified in your reports
 

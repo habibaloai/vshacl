@@ -43,6 +43,7 @@ from pyshacl.constraints.core.value_range_constraints import (
     MinExclusiveConstraintComponent,
     MinInclusiveConstraintComponent,
 )
+from pyshacl.constraints.multimodal.depicts import DepictsConstraintComponent
 from pyshacl.constraints.sparql.sparql_based_constraint_components import SPARQLConstraintComponent  # noqa: F401
 from pyshacl.constraints.sparql.sparql_based_constraints import SPARQLBasedConstraint
 
@@ -76,6 +77,7 @@ ALL_CONSTRAINT_COMPONENTS: List[Type[ConstraintComponent]] = [
     HasValueConstraintComponent,
     InConstraintComponent,
     SPARQLBasedConstraint,
+    DepictsConstraintComponent,
     # SPARQLConstraintComponent
     # ^ ^ This one is deliberately not included in this
     # list because it gets matched to shapes manually later
