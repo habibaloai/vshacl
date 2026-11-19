@@ -73,6 +73,12 @@ http = [
     "sanic-ext<23.6,>=23.3",
     "sanic-cors==2.2.0"
 ]
+clip = [
+    # vSHACL image scoring. Exact versions keep Mac and Windows setups identical.
+    "torch==2.15.0; python_version>='3.11'",
+    "transformers==5.23.0; python_version>='3.11'",
+    "pillow==13.0.0; python_version>='3.11'",
+]
 dev-lint = [
     "ruff<0.10,>=0.9.3",
     "platformdirs"
